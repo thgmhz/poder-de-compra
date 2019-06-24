@@ -1,10 +1,13 @@
 {
-  "name": "percent-wage",
+  "name": "howme",
+  "description": "How much more expensive",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://thiagommedeiros.github.io/howme/",
   "dependencies": {
     "@material-ui/core": "^4.0.1",
     "@material-ui/icons": "^4.0.1",
+    "gh-pages": "^2.0.0",
     "numeral": "^2.0.6",
     "ramda": "^0.26.1",
     "react": "^16.8.6",
@@ -16,7 +19,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -2,15 +2,17 @@ import React, { createContext, useReducer } from 'react'
 
 import reducers from './reducers'
 
-import brazilIcon from '../assets/images/brazil.png'
+import brazilIcon from '../assets/images/brazil.svg'
 import portugalIcon from '../assets/images/portugal.png'
+import spainIcon from '../assets/images/spain.png'
+import usaIcon from '../assets/images/united-states.png'
 
 const StateContext = createContext()
 
 const initialState = {
   pricing: {
-    firstCountry: 50,
-    secondCountry: 100,
+    firstCountry: '',
+    secondCountry: '',
   },
   selectedCountries: [
     {
@@ -50,6 +52,24 @@ const initialState = {
       coinSymbol: 'R$',
       minimumWage: 998,
       icon: brazilIcon,
+    },
+    {
+      id: 3,
+      name: 'spain',
+      label: 'Espanha',
+      referenceLabel: 'na Espanha',
+      coinSymbol: '€',
+      minimumWage: 1050,
+      icon: spainIcon,
+    },
+    {
+      id: 4,
+      name: 'usa',
+      label: 'EUA',
+      referenceLabel: 'nos EUA',
+      coinSymbol: 'US$',
+      minimumWage: 1276,
+      icon: usaIcon,
     },
   ],
 }

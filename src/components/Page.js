@@ -5,7 +5,6 @@ const useStyles = makeStyles(() => ({
   page: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
     flexWrap: 'wrap',
     padding: '20px',
     maxWidth: '400px',

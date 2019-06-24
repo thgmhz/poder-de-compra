@@ -2,29 +2,28 @@ import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import InputAdornment from '@material-ui/core/InputAdornment'
-import Typography from '@material-ui/core/Typography'
 
 import { StateContext } from '../state'
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
-  title: {
-    alignSelf: 'flex-start',
-    marginBottom: '5px'
-  },
-  subtitle: {
-    alignSelf: 'flex-start',
-    marginBottom: '10px'
+  root: {
+    margin: '20px 0'
   },
   textField: {
     width: '50%',
     '&:first-child': {
       marginRight: '10px'
-    }
+    },
+    '& input': { 
+      fontSize: '1.5em'
+    },
   },
   fields: {
     display: 'flex',
     width: '100%',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginTop: 10
   },
 }))
 
@@ -43,34 +42,37 @@ const FormPricing = () => {
     }
   })
 
-  const textFields = selectedCountries.map((country, index) => (
-    <TextField
-      key={country.name}
-      label={country.label}
-      className={classes.textField}
-      value={index === 0 ? firstCountry : secondCountry}
-      type="tel"
-      onChange={updatePricing.bind(this, index === 0 ? 'firstCountry' : 'secondCountry')}
-      margin="normal"
-      variant="outlined"
-      InputProps={{
-        startAdornment: <InputAdornment position="start">{country.coinSymbol}</InputAdornment>,
-      }}
-    />
-  ))
+  const textFields = selectedCountries.map((country, index) => {
+    const field = index === 0
+      ? 'firstCountry'
+      : 'secondCountry'
+
+    return (
+      <TextField
+        key={country.name}
+        label={`Preço ${country.referenceLabel}`}
+        className={classes.textField}
+        value={index === 0 ? firstCountry : secondCountry}
+        type="number"
+        onChange={updatePricing.bind(this, field)}
+        margin="normal"
+        variant="outlined"
+        InputProps={{
+          startAdornment: <InputAdornment position="start">{country.coinSymbol}</InputAdornment>,
+        }}
+      />
+    )
+  })
 
   return (
-    <React.Fragment>
+    <div className={classes.root}>
       <Typography variant="h6" className={classes.title}>
-        Preço
-      </Typography>
-      <Typography variant="subtitle2" className={classes.subtitle}>
-        Digite o preço de um produto em cada país
+        Digite o preço de um produto:
       </Typography>
       <div className={classes.fields}>
         {textFields}
       </div>
-    </React.Fragment>
+    </div>
   )
 }
 

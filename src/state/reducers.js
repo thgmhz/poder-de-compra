@@ -1,4 +1,7 @@
-import { UPDATE_MINIMUM_WAGE, UPDATE_PRICING } from "./constants"
+import { 
+  UPDATE_MINIMUM_WAGE,
+  UPDATE_PRICING 
+} from "./constants"
 
 const reducers = (state, action) => {
   const { type, payload } = action
@@ -25,15 +28,30 @@ const reducers = (state, action) => {
   if (type === UPDATE_PRICING) {
     const { pricing } = state
     const { countryPos, value } = payload
-
+    
     const newPricingState = {
       ...pricing,
-      [countryPos]: Number(value)
+      [countryPos]: value ? Number(value) : ''
     }
 
     const newState = {
       ...state,
       pricing: newPricingState
+    }
+
+    return newState
+  }
+
+  if (type === 'CHOOSE_COUNTRY') {
+    const { selectedCountries, countries } = state
+
+    const countryToAdd = countries.find(country => country.id === payload.addId)
+    const removedCountryIndex = selectedCountries.findIndex(country => country.id === payload.removeId)
+    
+    selectedCountries[removedCountryIndex] = countryToAdd
+
+    const newState = {
+      ...state
     }
 
     return newState
