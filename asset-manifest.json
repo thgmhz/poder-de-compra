@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/howme/static/css/main.88a00211.chunk.css",
+    "main.js": "/howme/static/js/main.90c00221.chunk.js",
+    "main.js.map": "/howme/static/js/main.90c00221.chunk.js.map",
+    "runtime~main.js": "/howme/static/js/runtime~main.15f1bac5.js",
+    "runtime~main.js.map": "/howme/static/js/runtime~main.15f1bac5.js.map",
+    "static/js/2.9bf5f935.chunk.js": "/howme/static/js/2.9bf5f935.chunk.js",
+    "static/js/2.9bf5f935.chunk.js.map": "/howme/static/js/2.9bf5f935.chunk.js.map",
+    "index.html": "/howme/index.html",
+    "precache-manifest.003ed0212a3b7120c543cd8d317a24ec.js": "/howme/precache-manifest.003ed0212a3b7120c543cd8d317a24ec.js",
+    "service-worker.js": "/howme/service-worker.js",
+    "static/css/main.88a00211.chunk.css.map": "/howme/static/css/main.88a00211.chunk.css.map",
+    "static/media/brazil.svg": "/howme/static/media/brazil.a102e563.svg"
+  }
+}
